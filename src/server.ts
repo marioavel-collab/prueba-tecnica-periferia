@@ -5,7 +5,7 @@ import { leerMaestro, leerSoportesExigidos } from './services/proveedorService.j
 import { generarPaquete } from './services/paqueteService.js';
 import { procesarMensajeAgente } from './agent/orchestrator.js';
 
-const PORT = 3000;
+const PORT = Number(process.env.PORT ?? 3000);
 
 const server = createServer(async (req, res) => {
   const url = new URL(req.url ?? '/', 'http://' + req.headers.host);
